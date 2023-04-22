@@ -1,7 +1,10 @@
+import CostElement from "./components/CostElement";
+
 function App() {
+  const date = new Date(2019, 2, 3);
   return (
     <div>
-      <h2>Expense control app</h2>
+      <CostElement date={date} />
     </div>
   );
 }

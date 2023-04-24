@@ -1,5 +1,5 @@
-import CostElement from "./components/CostElement";
-import Card from "./components/Card";
+import CostElement from "./components/Costs/CostElement";
+import Card from "./components/Layout/Card";
 
 function App() {
   const date = new Date(2019, 2, 3);

@@ -1,5 +1,5 @@
-import Card from "./Card";
-import CostDate from "./CostDate";
+import Card from "../Layout/Card";
+import CostDate from "../Costs/CostDate";
 import "./CostElement.css";
 
 const CostElement = ({ date }) => {

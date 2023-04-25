@@ -1,17 +1,16 @@
 import Card from "../Layout/Card";
-import CostDate from "../Costs/CostDate";
 import "./CostElement.css";
+import CostItem from "./CostItem";
 
-const CostElement = ({ date, name, price }) => {
+const CostElement = ({ costs }) => {
   return (
     <>
-      <Card className="cost__item">
-        <CostDate date={date} />
-        <div className="cost__desc__item">
-          <h2>{name}</h2>
-          <div className="cost__price__item">${price}</div>
-          <button>change title</button>
-        </div>
+      <Card className="cost">
+        <CostItem
+          title={costs[0].title}
+          date={costs[0].date}
+          price={costs[0].price}
+        />
       </Card>
     </>
   );

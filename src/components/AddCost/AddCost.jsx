@@ -1,10 +1,18 @@
 import "./AddCost.css";
 import CostForm from "./CostForm";
 
-const AddCost = () => {
+const AddCost = ({ onAddCosts }) => {
+  const saveCostHandler = (enteredCostData) => {
+    const costData = {
+      ...enteredCostData,
+      id: Math.random().toString(),
+    };
+    onAddCosts(costData);
+  };
+
   return (
     <div className="add__cost">
-      <CostForm />
+      <CostForm onSaveCostData={saveCostHandler} />
     </div>
   );
 };

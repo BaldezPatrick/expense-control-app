@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./CostForm.css";
 
-const CostForm = () => {
+const CostForm = ({ onSaveCostData }) => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [inputDate, setInputDate] = useState("");
@@ -18,12 +18,26 @@ const CostForm = () => {
     setInputDate(e.target.value);
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const costData = {
+      title: inputTitle,
+      value: inputValue,
+      date: new Date(inputDate),
+    };
+
+    onSaveCostData(costData);
+    setInputTitle("");
+    setInputValue("");
+    setInputDate("");
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="cost__add__controls">
         <div className="cost__add__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input type="text" value={inputTitle} onChange={titleChangeHandler} />
         </div>
 
         <div className="cost__add__control">
@@ -32,6 +46,7 @@ const CostForm = () => {
             type="number"
             min="0.01"
             step="0.01"
+            value={inputValue}
             onChange={valueChangeHandler}
           />
         </div>
@@ -40,15 +55,16 @@ const CostForm = () => {
           <label>Date</label>
           <input
             type="date"
-            min="2019-01-01"
-            max="2023-12-31"
+            min="31-01-2019"
+            max="31-12-2023"
+            value={inputDate}
             onChange={dateCHangeHandler}
           />
         </div>
       </div>
 
       <div className="cost__add__actions">
-        <button type="submit">Add Cost</button>
+        <button>Add Cost</button>
       </div>
     </form>
   );

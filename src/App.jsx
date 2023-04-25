@@ -5,7 +5,7 @@ function App() {
   const date = new Date(2019, 2, 3);
   return (
     <Card>
-      <CostElement date={date} />
+      <CostElement date={date} name={"Bike"} price={2000} />
     </Card>
   );
 }

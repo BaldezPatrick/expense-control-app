@@ -3,15 +3,15 @@ import "./CostForm.css";
 
 const CostForm = ({ onSaveCostData }) => {
   const [inputTitle, setInputTitle] = useState("");
-  const [inputValue, setInputValue] = useState("");
+  const [inputPrice, setInputPrice] = useState("");
   const [inputDate, setInputDate] = useState("");
 
   const titleChangeHandler = (e) => {
     setInputTitle(e.target.value);
   };
 
-  const valueChangeHandler = (e) => {
-    setInputValue(e.target.value);
+  const priceChangeHandler = (e) => {
+    setInputPrice(e.target.value);
   };
 
   const dateCHangeHandler = (e) => {
@@ -22,13 +22,13 @@ const CostForm = ({ onSaveCostData }) => {
     e.preventDefault();
     const costData = {
       title: inputTitle,
-      value: inputValue,
+      price: inputPrice,
       date: new Date(inputDate),
     };
 
     onSaveCostData(costData);
     setInputTitle("");
-    setInputValue("");
+    setInputPrice("");
     setInputDate("");
   };
 
@@ -41,13 +41,13 @@ const CostForm = ({ onSaveCostData }) => {
         </div>
 
         <div className="cost__add__control">
-          <label>Value</label>
+          <label>Price</label>
           <input
             type="number"
             min="0.01"
             step="0.01"
-            value={inputValue}
-            onChange={valueChangeHandler}
+            value={inputPrice}
+            onChange={priceChangeHandler}
           />
         </div>
 
@@ -55,8 +55,8 @@ const CostForm = ({ onSaveCostData }) => {
           <label>Date</label>
           <input
             type="date"
-            min="31-01-2019"
-            max="31-12-2023"
+            min="2019-01-01"
+            max="2023-12-31"
             value={inputDate}
             onChange={dateCHangeHandler}
           />

@@ -10,13 +10,13 @@ function App() {
       date: new Date(),
     },
   ];
-  const addCostHanler = (costs) => {
+  const addCostHandler = (costs) => {
     console.log(costs);
   };
 
   return (
     <>
-      <AddCost onAddCosts={addCostHanler} />
+      <AddCost onAddCosts={addCostHandler} />
       <CostElement costs={costs} />
     </>
   );

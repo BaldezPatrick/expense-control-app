@@ -22,8 +22,8 @@
   
 .add__cost button:hover,
 .add__cost button:active {
-    background-color: #510674;
-    border-color: #510674;
+    transform: scale(1.1);
+    transition: .5s ease-in-out;
 }
   
 .add__cost button.alternative {

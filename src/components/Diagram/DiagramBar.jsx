@@ -2,7 +2,7 @@ import "./DiagramBar.css";
 
 const DiagramBar = ({ label, value, maxValue }) => {
   let barFillHeight = "0%";
-  if (maxValue >= 0) {
+  if (maxValue > 0) {
     barFillHeight = Math.round((value / maxValue) * 100) + "%";
   }
 

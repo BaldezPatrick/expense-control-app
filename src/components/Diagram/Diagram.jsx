@@ -10,7 +10,7 @@ const Diagram = ({ dataCosts }) => {
         <DiagramBar
           key={dataCost.label}
           value={dataCost.value}
-          maxValue={dataCostValues}
+          maxValue={max}
           label={dataCost.label}
         />
       ))}

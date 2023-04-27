@@ -37,7 +37,7 @@ const CostForm = ({ onSaveCostData, closeAddHandler }) => {
     <form onSubmit={submitHandler}>
       <div className="cost__add__controls">
         <div className="cost__add__control">
-          <label>Title</label>
+          <label>Product</label>
           <input type="text" value={inputTitle} onChange={titleChangeHandler} />
         </div>
 
@@ -53,7 +53,7 @@ const CostForm = ({ onSaveCostData, closeAddHandler }) => {
         </div>
 
         <div className="cost__add__control">
-          <label>Date</label>
+          <label>Purchase date</label>
           <input
             type="date"
             min="2019-01-01"

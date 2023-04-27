@@ -1,7 +1,18 @@
+import { useState } from "react";
 import "./AddCost.css";
 import CostForm from "./CostForm";
 
 const AddCost = ({ onAddCosts }) => {
+  const [isShow, setIsShow] = useState(false);
+
+  const showAddHandler = () => {
+    setIsShow(true);
+  };
+
+  const closeAddHandler = () => {
+    setIsShow(false);
+  };
+
   const saveCostHandler = (enteredCostData) => {
     const costData = {
       ...enteredCostData,
@@ -12,7 +23,14 @@ const AddCost = ({ onAddCosts }) => {
 
   return (
     <div className="add__cost">
-      <CostForm onSaveCostData={saveCostHandler} />
+      {isShow ? (
+        <CostForm
+          onSaveCostData={saveCostHandler}
+          closeAddHandler={closeAddHandler}
+        />
+      ) : (
+        <button onClick={showAddHandler}>Add new Cost</button>
+      )}
     </div>
   );
 };

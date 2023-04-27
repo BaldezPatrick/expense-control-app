@@ -1,0 +1,9 @@
+.cost__list {
+    list-style: none;
+    padding: 0;
+}
+  
+.cost__list__fallback {
+    color: black;
+    text-align: center;
+}

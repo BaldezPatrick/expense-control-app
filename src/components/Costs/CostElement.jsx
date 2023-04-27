@@ -1,16 +1,30 @@
+import { useState } from "react";
 import Card from "../Layout/Card";
+import CostDiagram from "./CostDiagram";
 import "./CostElement.css";
-import CostItem from "./CostItem";
+import CostFilter from "./CostFilter";
+import CostList from "./CostList";
 
 const CostElement = ({ costs }) => {
+  const [filteredYear, setFilteredYear] = useState("2023");
+
+  const filterHandlerChange = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
+
+  const filteredCosts = costs.filter((cost) => {
+    return cost.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <>
       <Card className="cost">
-        <CostItem
-          title={costs[0].title}
-          date={costs[0].date}
-          price={costs[0].price}
+        <CostFilter
+          selected={filteredYear}
+          onChangeFilter={filterHandlerChange}
         />
+        <CostDiagram costs={filteredCosts} />
+        <CostList itemList={filteredCosts} />
       </Card>
     </>
   );

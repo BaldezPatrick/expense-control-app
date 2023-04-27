@@ -1,5 +1,5 @@
 .add__cost {
-    background-color: #A6D0DD;
+    background-color: white;
     border-radius: 12px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
     margin: 2rem auto;
@@ -10,7 +10,7 @@
 }
   
 .add__cost button {
-    background-color: #FF6969;
+    background-color: black;
     border: none;
     border-radius: 12px;
     cursor: pointer;

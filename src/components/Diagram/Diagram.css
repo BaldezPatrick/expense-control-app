@@ -1,7 +1,7 @@
 .diagram {
     padding: 1rem;
     border-radius: 12px;
-    background-color: #f8dfff;
+    background-color: transparent;
     text-align: center;
     display: flex;
     justify-content: space-around;

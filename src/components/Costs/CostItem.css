@@ -1,6 +1,6 @@
 .cost__item {
     align-items: center;
-    background-color: #A6D0DD;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     margin: 1rem 1rem;
@@ -26,7 +26,7 @@
 }
   
 .cost__price__item {
-    background-color: #FF6969;
+    background-color: black;
     border: none;
     border-radius: 12px;
     color: white;

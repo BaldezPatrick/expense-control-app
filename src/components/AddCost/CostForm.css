@@ -24,3 +24,25 @@
 .cost__add__actions {
     text-align: right;
 }
+
+@media screen and (max-width: 661px) {
+    .cost__add__controls {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cost__add__control label {
+        text-align: center;
+    }
+
+    .cost__add__control input {
+        width: 90%;
+    }
+
+    .cost__add__actions {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: 30px;
+    }
+}

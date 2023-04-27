@@ -5,5 +5,25 @@
     text-align: center;
     display: flex;
     justify-content: space-around;
-    height: 10rem;
+}
+
+@media screen and (max-width: 500px) {
+    .diagram {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .diagram button {
+        background-color: black;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        color: white;
+        font: inherit;
+        font-size: 9pt;
+        margin: 5px;
+        padding: 2px;
+        width: 100%;
+    }
 }

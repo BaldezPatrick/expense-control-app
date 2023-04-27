@@ -21,3 +21,10 @@
     font-weight: bold;
     padding: 0.2rem 2rem;
 }
+
+@media screen and (max-width: 500px) {
+    .costs__filter__control {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -26,6 +26,8 @@ const CostForm = ({ onSaveCostData, closeAddHandler }) => {
       date: new Date(inputDate),
     };
 
+    if (!inputDate || !inputPrice || !inputTitle) return;
+
     onSaveCostData(costData);
     closeAddHandler();
     setInputTitle("");

@@ -9,14 +9,17 @@ const CostForm = ({ onSaveCostData, closeAddHandler }) => {
 
   const titleChangeHandler = (e) => {
     setInputTitle(e.target.value);
+    if (!inputTitle) return setIsInputGroup(false);
   };
 
   const priceChangeHandler = (e) => {
     setInputPrice(e.target.value);
+    if (!inputPrice) return setIsInputGroup(false);
   };
 
   const dateCHangeHandler = (e) => {
     setInputDate(e.target.value);
+    if (!inputDate) return setIsInputGroup(false);
   };
 
   const submitHandler = (e) => {

@@ -5,6 +5,7 @@ const CostForm = ({ onSaveCostData, closeAddHandler }) => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputPrice, setInputPrice] = useState("");
   const [inputDate, setInputDate] = useState("");
+  const [isInputGroup, setIsInputGroup] = useState(false);
 
   const titleChangeHandler = (e) => {
     setInputTitle(e.target.value);
@@ -26,13 +27,24 @@ const CostForm = ({ onSaveCostData, closeAddHandler }) => {
       date: new Date(inputDate),
     };
 
-    if (!inputDate || !inputPrice || !inputTitle) return;
+    if (!inputDate || !inputPrice || !inputTitle) {
+      setIsInputGroup(true);
+      return;
+    }
 
     onSaveCostData(costData);
     closeAddHandler();
     setInputTitle("");
     setInputPrice("");
     setInputDate("");
+  };
+
+  const WarningMessage = () => {
+    return (
+      <p style={{ color: isInputGroup ? "red" : "" }}>
+        É preciso preencher todos os campos
+      </p>
+    );
   };
 
   return (
@@ -65,7 +77,7 @@ const CostForm = ({ onSaveCostData, closeAddHandler }) => {
           />
         </div>
       </div>
-
+      {isInputGroup ? <WarningMessage /> : ""}
       <div className="cost__add__actions">
         <button>Add Cost</button>
       </div>
